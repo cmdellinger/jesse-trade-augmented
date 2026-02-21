@@ -69,6 +69,7 @@ def _choose_step_ms(from_ms: int, to_ms: int, timeframe: str, max_points: int = 
     timeframe_map = {
         '1m': 60_000,
         '5m': 300_000,
+        '10m': 600_000,
         '15m': 900_000,
         '1h': 3_600_000,
         '1d': 86_400_000,
@@ -182,4 +183,3 @@ def get_session_equity_count(session_id: str) -> int:
         ).count()
     except Exception:
         return 0
-

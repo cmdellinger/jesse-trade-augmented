@@ -25,6 +25,7 @@ def anchor_timeframe(timeframe: str) -> str:
         timeframes.MINUTE_1: timeframes.MINUTE_5,
         timeframes.MINUTE_3: timeframes.MINUTE_15,
         timeframes.MINUTE_5: timeframes.MINUTE_30,
+        timeframes.MINUTE_10: timeframes.HOUR_1,
         timeframes.MINUTE_15: timeframes.HOUR_2,
         timeframes.MINUTE_30: timeframes.HOUR_3,
         timeframes.MINUTE_45: timeframes.HOUR_3,
@@ -329,7 +330,7 @@ def timeframe_to_one_minutes(timeframe: str) -> int:
     Converts a given timeframe to its equivalent in minutes.
 
     :param timeframe: str - The timeframe to convert. Supported timeframes include:
-        - '1m', '3m', '5m', '15m', '30m', '45m', '1h', '2h', '3h', '4h', '6h', '8h', '12h', 
+        - '1m', '3m', '5m', '10m', '15m', '30m', '45m', '1h', '2h', '3h', '4h', '6h', '8h', '12h',
           '1d', '3d', '1w', '1M'.
     :return: int - The equivalent number of minutes for the given timeframe.
 
@@ -342,6 +343,7 @@ def timeframe_to_one_minutes(timeframe: str) -> int:
         timeframes.MINUTE_1: 1,
         timeframes.MINUTE_3: 3,
         timeframes.MINUTE_5: 5,
+        timeframes.MINUTE_10: 10,
         timeframes.MINUTE_15: 15,
         timeframes.MINUTE_30: 30,
         timeframes.MINUTE_45: 45,

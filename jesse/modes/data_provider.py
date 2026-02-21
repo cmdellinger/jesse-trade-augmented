@@ -37,7 +37,9 @@ def get_candles(exchange: str, symbol: str, timeframe: str):
     generate_candles_from_1m: bool = json.loads(o.json)['live']['generate_candles_from_1m']
 
     # fetch 1m candles from database
-    if generate_candles_from_1m:
+    should_generate_from_1m = generate_candles_from_1m or timeframe == '10m'
+
+    if should_generate_from_1m:
         timeframe_to_fetch = '1m'
     else:
         timeframe_to_fetch = timeframe
@@ -51,7 +53,7 @@ def get_candles(exchange: str, symbol: str, timeframe: str):
         database.close_connection()
         return []
 
-    if generate_candles_from_1m:
+    if should_generate_from_1m:
         # leave out first candles until the timestamp of the first candle is the beginning of the timeframe
         timeframe_duration = one_min_count * 60_000
         while candles[0][0] % timeframe_duration != 0:

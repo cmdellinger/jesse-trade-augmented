@@ -1009,6 +1009,7 @@ timeframe_to_one_minutes = {
     timeframes.MINUTE_1: 1,
     timeframes.MINUTE_3: 3,
     timeframes.MINUTE_5: 5,
+    timeframes.MINUTE_10: 10,
     timeframes.MINUTE_15: 15,
     timeframes.MINUTE_30: 30,
     timeframes.MINUTE_45: 45,

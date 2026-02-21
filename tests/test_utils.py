@@ -10,6 +10,7 @@ def test_anchor_timeframe():
     assert utils.anchor_timeframe('1m') == '5m'
     assert utils.anchor_timeframe('3m') == '15m'
     assert utils.anchor_timeframe('5m') == '30m'
+    assert utils.anchor_timeframe('10m') == '1h'
     assert utils.anchor_timeframe('15m') == '2h'
     assert utils.anchor_timeframe('30m') == '3h'
     assert utils.anchor_timeframe('1h') == '4h'
@@ -180,6 +181,7 @@ def test_timeframe_to_one_minutes():
     assert utils.timeframe_to_one_minutes("1m") == 1
     assert utils.timeframe_to_one_minutes("3m") == 3
     assert utils.timeframe_to_one_minutes("5m") == 5
+    assert utils.timeframe_to_one_minutes("10m") == 10
     assert utils.timeframe_to_one_minutes("15m") == 15
     assert utils.timeframe_to_one_minutes("30m") == 30
     assert utils.timeframe_to_one_minutes("1h") == 60
